@@ -1696,7 +1696,7 @@ body.pend .apply::after { display: block; animation: pulse 1.5s ease-in-out infi
   function diagScript() { return "{ " + diagBody() + "; } 2>&1 | " + REDACT; }
   function diagBody() {
     return "P=" + PKG + "; D=" + D + "; L=$D/codm_tex.log; " +
-      "echo '== report'; echo 'UI: v0.36'; echo 'shell mode: " + ["direct", "nsenter", "su"][WR] + "'; echo \"settings folder: $D\"; date; " +
+      "echo '== report'; echo 'UI: v0.37'; echo 'shell mode: " + ["direct", "nsenter", "su"][WR] + "'; echo \"settings folder: $D\"; date; " +
       "echo '== who'; id; getenforce 2>&1; " +
       "echo '== root manager'; (ksud -V 2>&1 || ksud --version 2>&1) | head -n 1; magisk -v 2>&1 | head -n 1; apd -V 2>&1 | head -n 1; ls /data/adb 2>&1 | tr '\\n' ' '; echo; " +
       "echo '== device props (ro.product.* can be SPOOFED by other modules: not proof of the real model)'; for k in ro.product.manufacturer ro.product.model ro.product.device ro.build.display.id; do echo \"$k=$(getprop $k)\"; done; " +
@@ -2070,4 +2070,3 @@ body.pend .apply::after { display: block; animation: pulse 1.5s ease-in-out infi
 </script>
 </body>
 </html>
-
